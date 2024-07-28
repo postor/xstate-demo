@@ -1,13 +1,11 @@
 import { interpret } from "xstate";
 import readline from "readline";
 import machine from "./machine";
-import { inspect } from "@xstate/inspect";
-
+import WebSocket from 'ws'
+import { inspect } from "@xstate/inspect/lib/server";
 
 inspect({
-  // options
-  // url: 'https://stately.ai/viz?inspect', // (default)
-  iframe: false // open in new window
+  server: new WebSocket.Server({ port: 8080 }),
 })
 
 const service = interpret(machine, { devTools: true }).onTransition((state) => {
@@ -27,9 +25,6 @@ const promptUser = async (query: string) => {
 
 const runMachine = async () => {
   while (true) {
-    const state = service.state.value;
-    console.log(`Machine is in state: ${JSON.stringify(state)}`);
-
     const input = await promptUser("Enter 1 to start, 2 to stop, 3 to reset, 0 to exit: \n");
     if (input === "1") {
       service.send("start");

@@ -15,6 +15,9 @@
     "xstate": "^4.38.3"
   },
   "devDependencies": {
-    "ts-node": "^10.9.2"
+    "@types/node": "^22.0.0",
+    "@types/ws": "^8.5.11",
+    "ts-node": "^10.9.2",
+    "ws": "^8.18.0"
   }
 }
