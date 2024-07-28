@@ -36,9 +36,9 @@ const process_reset_all = (ctx: CtxType) => {
 };
 
 // Machine definition
-const asyncMachine = createMachine({
-  /** @xstate-layout N4IgpgJg5mDOIC5QENYE8B2BjAssrAFgJYZgB0REANmAMSwAuyATgwNoAMAuoqAA4B7WEQZEBGXiAAeiALQAmAJwBGMsvkBWDhwDMADmUAWAGyKA7MoA0INImNm1m7Tp3LFh5WeMBfb9dSYuPjEpGQA7gLMANYkUPQMAnycPEgggsKi4pIyCApaZIqFRcVF1rYIhhyGZIZFWpV6ijoaLb7+6Nh4hCTkEdGxZHwsyFQ0VAD6jMgMYMq0EOLkUzNkAZ3BPeGRMRhQg8OjYBPLs8mS6SJiEqk5xhzyBTpmWl5KOu4aZYiKenpkxk5dBw9Bwim0QGsgt1Qn0dnshswRmNJkwZnMFqETqsOlCQr1tgMEUijijpqdlCl+EJLlkbnYnv8nPojKYzPI9F8EMpQQ8zLUfrUzIoAYoNODIV08Vt+rt9ojDsdUbNBswBFg4LBlONVQAjAQMMhUATICCxeaLCgYABuAii5D4qvVsE12rAAFt9WBtQI9exuOdqZlrqAcoZDJ8bIh3ooyE8xX4ITjJZtYYSDsiTqoHWqNVrdfrDcbTbtaGBmKrmIMqNMAGaRN0qnPOvPuz3e31nVIXIPZOwaVRKYy-eQi97hzkWaraaegjQ6eyGHTipMbGEE2VEhWktGNp2weTjLDIN1l5CFk1mjHkEg2u27jUH5itmaH4+nztUjJXXsIdwPO4GOyTxVPOiicu8qjAnOQ4aGYegeEoy6BMma4yvC6Ykpm97OgeR4noi57FnEZYVlWtb1th+6uh6L54e+-pdoG350lyHAAv8wLqHowGLmYnJ3JBejQUJcEeEuCYSqu+JoXKxKKmSWaOg+r74WeT5GiatAfmkTG0iGiDKMoOgPPyJTFBykYVIoDzxu0yFSdKcJkLAACuWB7uaoQ3ra5CSdC0lOa57kagg3lHkGyTad2zH6bkHBkPIZg6LxplFIuyjGJy3E6GQfJmSUSHrP5jkDEFHkkZEZEMHWzANn5UqprKZUhWF0xXJFDGfjSwbSHIzx-M8WXGMYCW2Ym9nFY18JKc6OjjEaR5UJ517Wj5lFzQtIxRbpPU5EYGhkHozzaK8TTuPYnLcpUhW4im67TU2sAbWqIyluWlV8NW1UUdme7PYt21fnpvUIPBZAaCYQnyIZygGMYi6coYzyHcd2iivOfLiXZRVShVzC0E+sBgH6lI6UDu1yIYQmxoobHQ7Dc73BG5T6H8SPGBo8iLoziXJTdKHkITxOXha3l3vVmxC6Iuyhat4XtdwgPdT+sjcQ4zMGcYOVPPyTx6COfJhvzDlS2aeNVTVdUrsVpsy61EWK51ZPKyxqsmKNiPQwlI4QyoVMtKKZi+AmGACBAcCSBLpABuTKuNNUmicgo8U64USNJfILheD4EnW1KlA0DHLuxbIJgHan+U-Do-EOOoWi6K47ieDn2O3ahcJFz2rtUwlSUpWZhiXey4NCfO7NPMoGha8bk33bJW6Zp3MUg1nZAzuv05WJZ0MjVBzQuG4AL6Fj4043dMmbhmSqKY9eY+vqS-Azk+gHRvG9byzhko-ymdmGxHAQyDrnCaDU56X0wtfSid9fSEViI-CmFQXBrzfjOD+iBajl2eDPUBF8MLyR3L9XM7YCxXngT+RcOUUGoJriNI6P9gJ3FaMAs+7c0zyivgpSiuE3yIjISxYcHFAJqxAnxSyOhdAj2gqCWoHBYZPGwefJy4D8HKkIThFSp5YG7D4bFJo8UAJcR4k8RGR016jxgqJdQigFGsI3Hg7cqiZpUTogRUhjFY4sT0YIwxf9eL8SHJI+c0jaaw0MDYgKbC5IOJvnubhqkyDqSLDokG6gkH2DpsIvxll-ZmOErBeCVjwklSam5PcyScgOCoZvQw8hOS02qHGIpU11rzRelQcpUYPBryaINSyhR4pc0KKYKmXNobWOYW3cgeMOm5CptrWmxgjItA0LTCy5QRnew5lzfe9w+5FNtlAGZpduL-EqBzFonhYJCk5FzP45gtnc3EbzMJwcgA */
-  id: 'asyncMachine',
+const overall_workflow = createMachine({
+  /** @xstate-layout N4IgpgJg5mDOIC5QHsBuYBOBDANjg+gO7IYDWAZjsoQHQCWEOYAxLAC5YZsDaADALqJQAB2Sw6bOsgB2QkAA9EAWgBMATgCMNDSoCsvXgGYAHBoAsANjUB2DQBoQAT0QXr2vQcOGNasxusWAL6BDmiYuATEZJTUNFGkdNJQrGzIwnyCSCCi4pIycooIqvo0amXlFeUOzghmvGY0ZuX6dcZqhrqdwaHo2HhEJBRUtPGJUDTCnBFgBOxYbGAazBAyYDRzCzRhfZGDMSODYxNTeDP4G4sZcjkSUrJZhRZ1pSoqhrxlemYBKtWI1gEaB4jKZLDYVNZuiBthEBtFhnFDkljjszhctMIMMgAMZwWAafBYgBGyDYNCoWAgY2Wq3o0lQyFIa0xOLxBIwYAAtqSwITkCSeAJrmJbvkHog1CptLw2l59NZDLYjH9asZeI1dMY1SpjCp-LxdFCYf14vtEWQjpNUbMOAsMVjcbB8XyBeTkJTqZgsRgJjh5uQSJyJg62YSuTyXaSrlkbnl7qBCkpDCp1YqtRYnjqzIYzMYVRYDDRbJKzLpzPoM8Yjb1YaaEaNkVbpjb5otg6ynSp8NisJzwm6PUkadI1okGUz247YF2OdyFt3e+FoyIRXGCohS8YaAXdTrzBZ-OYVboIaUAbxrO0NJqylWQtCaya9vWkeMm6cW3bJ3iuz2+9gBypIcvRIX1-UDb9OzDOdeT-JchRjVc7nXBALHeGgL2vGVXDQyxdBVMFt2TYx3hI2x1GsQ172NXZ4ViBs3xOJhPzbFkp1-RcAI5CkIGYZdsiQsUExcMpSjQkwjANNQPkMFVDAPDDvksV5NVsCw7x6cInzog4LWRWAAFdsSnYdR3pRk1houEhno191iMqcEDHHF5juDJ+NjZDxQQDQMyBSVrFLSx1N4PQVVMQwMI+XMC0lNRd2rLTaJs3SEn0hy8WYECfWEP02ADDAgysutbL08ZDOMvEnPMns43chCV1yLzhKKEi1CBaxjECmwAjVbNwvaUpswzGVDDKE81ESnZrLNBjINgQx8CoHscFMulx2ZEMnUW5bcA8wT4wURAvHVNoAV0MwKLqfCnEQNp2rUVw-A0HRdAPbMptrZ9SrSt8toWpaXNW7KwPyiC2LxHagf2pqhKOopSJoXQFTG0xTA0bx7FunzeAxostVBF7swxoJqMfZKzWy5gOVgMBBUyRrRUOxM6ki+SlQVTQOmsX5sblM8LBPbNdHeCEc0+7SUpoGm6epFYR3WiytnJmaERlyQkmqhlarcgQYaZlClALKUbpqfxdBoLqmnaTqVCeswzAlim1bgWXgIwb1QYKoqVZK2h1bGLWXLqvWGoE2HmeUVwtwvdGFWsXgC06AidSLO2TwNEwTo0YJ72kZAIDgORiu+whhQjw2tTcCErZ6kL+ux1RU0ogwbETrrNDtp3VdiBgmHLg3vKUPCaEVa3KlvWTsdcdx9CMbxfH8UnNOmv3zV+ge1yHtQLe6nUAQVPUczMFVNG0YiNHqToZWi7u17m99mPOW1Fk35r4eHtw966gFkwxh2VT+C3GhHU9ROqlnkhoDSD4ko91SpaJiaIX72g7M6YkpI35w0KOqDw5FXjR0FgeDGKoxZIwCJoYw70yyX0dmTWB987KPyQa2FBU52T8lJIBMYmDI6qiBPKHQ+DOqELkgpC8VgdC+DGhmQwd9S7rwQdaZ+LD5rsNdPLMAPCUIYy0MjV45gjCUWUseZGQI1RWBsGWAIuY5E6QUY2RBLFWE-gXP+LAWjvJ+HVDuV4oIDy2BPtjO2Fhz4QjKC9MamgHa2Klg-RxyivwQygnBACPFuGIQrp4+KGFbD6EoQEHMgs5KdCIjqUiipJFoRibNRh8T0TzQ4m4mgGiPEtSaBbCwKYuqdITuYX+x42iWz1H4MoXiPiQjoaveRcSlH1KSdOVx-ZuLuggK0+GaotD-wMPk3CRS+Yi1KSRUa5FHqyMmV9Oxc0KpTjWSzdUnUUY+C6QEKwFhwpjUaF4FQfg3jI28LQleFzYmMP+lDFatyXAmEtqWVSHRvCdGsOFdSQ15KC0VJ0NUEzAWS0ph7EgEKijZjZtJA8HROjSTzNjXMFsZQi3UsjYwPyd7VJdrTDWUACXDxItuOogtOjmwBGoEhp4eaC2+XC0KCpaHBCAA */
+  id: "overall_workflow",
   predictableActionArguments: true,
   context: {
     error_msg: '',
@@ -71,11 +71,10 @@ const asyncMachine = createMachine({
                       target: "done",
                     },
                     onError: {
-                      target: "#asyncMachine.error"
+                      target: "#overall_workflow.error"
                     },
                   },
                 },
-
                 done: {
                   type: 'final',
                 }
@@ -106,14 +105,9 @@ const asyncMachine = createMachine({
               },
             }
           },
-          onDone: [
-            {
-              target: "process3_local",
-              cond: ctx => !ctx.error_msg
-            }, {
-              target: "#asyncMachine.error"
-            }
-          ]
+          onDone: {
+            target: "process3_local",
+          }
         },
 
         success: {
@@ -123,7 +117,7 @@ const asyncMachine = createMachine({
               target: 'parallel_state1'
             },
             onError: {
-              target: "#asyncMachine.idle"
+              target: "#overall_workflow.idle"
             }
           }
 
@@ -136,7 +130,7 @@ const asyncMachine = createMachine({
             onDone: {
               target: "success",
             },
-            onError: "#asyncMachine.error",
+            onError: "#overall_workflow.error",
           },
         }
       },
@@ -163,18 +157,14 @@ const asyncMachine = createMachine({
     reseting: {
       invoke: {
         src: process_reset_all,
-        onDone: {
-          target: 'idle'
-        },
-        onError: {
-          target: 'error'
-        }
+        onDone: 'idle',
+        onError: 'error',
       }
     }
   }
 });
 
-export default asyncMachine
+export default overall_workflow
 
 
 function promise_action({ name, sucess, fail, timeout = 1000, chance = 0.9 }: {

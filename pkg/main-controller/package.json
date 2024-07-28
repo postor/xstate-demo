@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@grpc/grpc-js": "^1.11.1",
+    "@xstate/inspect": "^0.8.0",
     "xstate": "^4.38.3"
   },
   "devDependencies": {

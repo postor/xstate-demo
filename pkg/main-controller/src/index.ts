@@ -1,9 +1,16 @@
 import { interpret } from "xstate";
 import readline from "readline";
 import machine from "./machine";
+import { inspect } from "@xstate/inspect";
 
 
-const service = interpret(machine).onTransition((state) => {
+inspect({
+  // options
+  // url: 'https://stately.ai/viz?inspect', // (default)
+  iframe: false // open in new window
+})
+
+const service = interpret(machine, { devTools: true }).onTransition((state) => {
   console.log(`Current state: ${JSON.stringify(state.value)}`);
 });
 
